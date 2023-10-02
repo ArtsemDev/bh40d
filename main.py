@@ -17,6 +17,9 @@ print(zip_longest)
 def foo(): ...
 
 
+def bar(): ...
+
+
 print("java")
 print("pycharm")
 print("pycharm")
