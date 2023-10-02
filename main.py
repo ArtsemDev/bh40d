@@ -1,4 +1,1 @@
-class B:
-    url: str
-    class Meta2:
-        ...
+print("hello world")
