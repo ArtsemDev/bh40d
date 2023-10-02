@@ -1,4 +1,10 @@
-def foo(): ...
+from itertools import zip_longest
+
 print("python")
-print("world")
+print(zip_longest)
+
+
+def foo(): ...
+
+
 print("pycharm")
