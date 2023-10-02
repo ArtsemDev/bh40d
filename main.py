@@ -1,3 +1,3 @@
-print("hello pycharm")
-print("hello pycharm")
+print("hello world")
+print("hello python")
 print("hello pycharm")
