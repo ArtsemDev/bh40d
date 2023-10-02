@@ -1,9 +1,10 @@
 print("hello hell")
 print("belhard")
-print("hello python")
+def foo(): ...
 print("goodbye world")
 print("hello pycharm")
 print()
+class A: ...
 print("bye pycharm")
 print("hello pycharm")
 print("lorem ipsum")
