@@ -20,6 +20,9 @@ def foo(): ...
 def bar(): ...
 
 
+def baz(): ...
+
+
 print("java")
 print("pycharm")
 print("pycharm")
