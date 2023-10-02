@@ -1,6 +1,6 @@
 from itertools import zip_longest
 
-print("world")
+a = input("world")
 print("python")
 print("python")
 print("python")
