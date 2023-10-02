@@ -1,6 +1,9 @@
 from itertools import zip_longest
 
-a = input("world")
+print(len('sdfs'))
+b = input("conflict")
+a = input("conflict")
+c = input("conflict")
 print("python")
 print("python")
 print("python")
