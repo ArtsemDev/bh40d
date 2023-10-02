@@ -1,3 +1,7 @@
 print("hello world")
 print("hello python")
 print("hello pycharm")
+print("bye pycharm")
+print("lorem ipsum")
+print("belhard")
+print()
