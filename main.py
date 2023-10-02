@@ -1,4 +1,4 @@
-def bar():
-    def baz():
+class A:
+
+    class Meta:
         ...
-    return baz
