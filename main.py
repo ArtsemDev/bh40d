@@ -1,4 +1,4 @@
-class A:
-
-    class Meta:
+class B:
+    url: str
+    class Meta2:
         ...
