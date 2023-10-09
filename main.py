@@ -11,7 +11,8 @@ print("python")
 print(zip_longest)
 
 
-def foo(): ...
+def foo():
+    ...
 
 
 print("java")
