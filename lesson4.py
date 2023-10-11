@@ -196,8 +196,26 @@
 #  result = {"H": 72, "e": 101, "l": 108, "o": 111}
 #  Дополнительно: найти сумму значений полученного словаря
 #  с = 392
-text = input("Enter text: ")
-data = {i: ord(i) for i in text}
-c = sum(data.values())
-print(data)
-print(c)
+# text = input("Enter text: ")
+# data = {i: ord(i) for i in text}
+# c = sum(data.values())
+# print(data)
+# print(c)
+
+
+# text = "Hello world"
+# data = {i: text.count(i) for i in text}
+# print(data)
+# n = 5
+# numbers = [2**i for i in range(1, n + 1)]
+# print(numbers)
+
+# n = 3
+# data = {
+#     i: {"name": input(f"Enter {i} name: "), "email": input(f"Enter {i} email: ")}
+#     for i in range(1, n + 1)
+# }
+# print(data)
+# n = 5
+# numbers = [2**i for i in range(1, n + 1)]
+# print(numbers)
