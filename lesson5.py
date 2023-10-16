@@ -239,3 +239,69 @@
 # a = []
 # a.append(a)
 # print(a)
+
+# N = int(input("N: "))
+# M = int(input("M: "))
+# K = int(input("K: "))
+# c = 0
+# while N:
+#     if K % M == 0:
+#         N -= 1
+#         print(K)
+#         K += M
+#     else:
+#         K += 1
+
+# a = float(input("a: "))
+# action = input("action: ")
+# b = float(input("b: "))
+# match action:
+#     case "+":
+#         print(a + b)
+#     case "-":
+#         print(a - b)
+#     case "*":
+#         print(a * b)
+#     case "/":
+#         print(a / b)
+#     case _:
+#         print("invalid action")
+# n = 34
+# num_counter = 0
+
+# for i in range(2, n + 1, 2):
+#     if num_counter == 5:
+#         num_counter = 0
+#         print()
+#     print(i, end=" ")
+#     num_counter += 1
+# for i in range(2, n + 1, 2):
+#     print(i, end=" ")
+#     if i % 10 == 0:
+#         print()
+# for i in range(2, n + 1, 10):
+#     for j in range(i, i + 9, 2):
+#         if j > n:
+#             break
+#         print(j, end=" ")
+#     print()
+
+
+#  Дан список названия городов
+#  Дан список с дробными числами (показатель прироста населения)
+#  Гарантировано, что списки одинаковой длины.
+#  Вводится число, необходимо вывести название городов, у которых
+#  показатель больше или равен введенному числу
+#  cities = ["Minsk", "Mogilev", "Gomel", "Brest"]
+#  population_density = [23.4, 15.8, 31.6, 10.7]
+#  c = float(input())
+
+# cities = ["Minsk", "Mogilev", "Gomel", "Brest"]
+# population_density = [23.4, 15.8, 31.6, 10.7]
+# c = float(input())
+# for i in range(len(population_density)):
+#     if population_density[i] >= c:
+#         print(cities[i])
+# for i, val in enumerate(population_density):
+#     if val >= c:
+#         print(cities[i])
