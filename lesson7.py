@@ -199,4 +199,3 @@ def find_user_without_email(users: dict[int, dict[str, T]]) -> list[str]:
 #         del objs[i]
 #     else:
 #         i += 1
-
