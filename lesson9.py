@@ -189,3 +189,13 @@ class Singleton(type):
 
 class MySingleton1(metaclass=Singleton):
     pass
+
+
+class Car:
+
+    def __init__(self, name, volume):
+        self.name = name
+        self.volume = volume
+
+    def __str__(self):
+        return f"Car: {self.name}, volume: {self.volume}"
