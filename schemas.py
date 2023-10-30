@@ -3,8 +3,10 @@ from typing import *
 from datetime import datetime
 from http import HTTPMethod
 
+from annotated_types import LowerCase, Predicate
 from pydantic import BaseModel, Field, PositiveInt, field_validator, model_validator, validate_call, AfterValidator, \
-    ConfigDict
+    ConfigDict, PostgresDsn, UrlConstraints
+from pydantic_core import MultiHostUrl
 
 
 class ProductDetail(BaseModel):
@@ -95,6 +97,11 @@ AlphaStr = Annotated[str, AfterValidator(func=is_alpha_str)]
 DigitStr = ""
 PasswordStr = ""
 ZipCodeStr = ""
+IsAlphaTitleStr = Annotated[
+    str,
+    Predicate(func=str.isalpha),
+    Predicate(func=str.istitle)
+]
 
 
 class A(BaseModel):
@@ -102,3 +109,15 @@ class A(BaseModel):
     model_config = ConfigDict()
 
     method: HTTPMethod
+
+
+SQLiteDsn = Annotated[
+    MultiHostUrl,
+    UrlConstraints(
+        host_required=True,
+        allowed_schemes=[
+            "sqlite",
+            "sqlite+aiosqlite"
+        ],
+    ),
+]
