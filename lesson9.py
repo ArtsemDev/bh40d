@@ -1,6 +1,3 @@
-from django.views.generic import ListView
-
-
 class A:
     class_attr = "some class attr"
 
@@ -100,6 +97,7 @@ class SimplePhone(AbstractPhone):
 
     def call(self, phone):
         pass
+
 
 # SOLID
 # S - Single Responsibility
