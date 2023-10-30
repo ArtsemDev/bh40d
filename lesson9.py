@@ -193,9 +193,33 @@ class MySingleton1(metaclass=Singleton):
 
 class Car:
 
-    def __init__(self, name, volume):
-        self.name = name
-        self.volume = volume
+    def __init__(self, count_passenger_seats: int, is_baby_seat: bool) -> None:
+        self.count_passenger_seats = count_passenger_seats
+        self.is_baby_seat = is_baby_seat
+        self._is_busy = False
 
-    def __str__(self):
-        return f"Car: {self.name}, volume: {self.volume}"
+    @property
+    def is_busy(self) -> bool:
+        return self._is_busy
+
+    @is_busy.setter
+    def is_busy(self, value: bool) -> None:
+        if not isinstance(value, bool):
+            raise TypeError
+        self._is_busy = value
+
+
+class Taxi:
+
+    def __init__(self, cars: list[Car]) -> None:
+        self.cars = cars
+
+    def find(self, count_passenger: int, is_baby: bool) -> Car:
+        for car in self.cars:
+            if not car.is_busy and car.count_passenger_seats >= count_passenger:
+                if is_baby and car.is_baby_seat:
+                    car.is_busy = True
+                    return car
+                elif not is_baby:
+                    car.is_busy = True
+                    return car
