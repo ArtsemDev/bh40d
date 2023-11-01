@@ -178,16 +178,59 @@
 #     print(file.read())
 
 
-import logging
+# import logging
+#
+# logging.basicConfig(
+#     format="[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s",
+#     datefmt="%d/%b/%Y %H:%M:%S",
+#     level=logging.INFO, filename="log.log"
+# )
+#
+#
+# try:
+#     age = int(input("Enter age: "))
+# except ValueError:
+#     logging.error("Пользователь тупица, не может ввести возраст")
 
-logging.basicConfig(
-    format="[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s",
-    datefmt="%d/%b/%Y %H:%M:%S",
-    level=logging.INFO, filename="log.log"
-)
+# ACID
+# A - atomicity
+# C - consistency
+# I - Isolation
+# D - Durability
+
+# CAP
+# C - consistency
+# A - availability
+# P - partition tolerance
 
 
-try:
-    age = int(input("Enter age: "))
-except ValueError:
-    logging.error("Пользователь тупица, не может ввести возраст")
+from sqlite3 import connect
+
+
+conn = connect(database="db.sqlite3")
+cur = conn.cursor()
+
+cur.execute("""
+    CREATE TABLE IF NOT EXISTS categories (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name VARCHAR(32) NOT NULL UNIQUE CHECK ( length(name) >= 2 ),
+        is_published BOOLEAN NOT NULL DEFAULT (false)
+    );
+""")
+conn.commit()
+cur.execute("""
+    CREATE TABLE IF NOT EXISTS products (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name VARCHAR (32) NOT NULL UNIQUE CHECK ( length(name) >= 2 ),
+        price DECIMAL (8, 2) NOT NULL CHECK ( price > 0 ),
+        category_id INTEGER NOT NULL,
+        FOREIGN KEY ( category_id ) REFERENCES categories ( id ) ON DELETE RESTRICT
+    );
+""")
+conn.commit()
+
+# cur.execute("ALTER TABLE products ADD descr TEXT NOT NULL default '';")
+# conn.commit()
+
+cur.execute("CREATE INDEX category_id_index ON products ( category_id );")
+conn.commit()
