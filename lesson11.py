@@ -232,5 +232,11 @@ conn.commit()
 # cur.execute("ALTER TABLE products ADD descr TEXT NOT NULL default '';")
 # conn.commit()
 
-cur.execute("CREATE INDEX category_id_index ON products ( category_id );")
+# cur.execute("CREATE INDEX category_id_index ON products ( category_id );")
+# conn.commit()
+
+# cur.execute("INSERT INTO categories (name) VALUES (?);", ("drop table products;", ))
+# conn.commit()
+
+cur.execute("UPDATE categories SET name = :category_name WHERE id = :category_id;", {"category_name": "qwedr", "category_id": 1})
 conn.commit()
