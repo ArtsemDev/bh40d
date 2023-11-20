@@ -1,4 +1,5 @@
-class Math:
+class Math(object):
+    __slots__ = ("a", "b")
 
     def __init__(self, a, b):
         self.a = a

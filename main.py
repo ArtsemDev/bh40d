@@ -1,30 +1,19 @@
-from itertools import zip_longest
-
-a = input("world")
-print("python")
-print("python")
-print("python")
-print("python")
-print("python")
-print("python")
-print("python")
-print(zip_longest)
+# from psycopg2.extras import NamedTupleCursor, NamedTupleConnection
+# from fastapi import FastAPI
 
 
-def foo():
-    ...
+# app = FastAPI()
+# conn = NamedTupleConnection(dsn="postgresql://admin:admin@0.0.0.0:5432/admin")
 
 
-print("java")
-print("pycharm")
-print("pycharm")
-print("pycharm")
-print("pycharm")
-print("pycharm")
-print("pycharm")
-print("pycharm")
-print("pycharm")
-print("pycharm")
-print("pycharm")
-print("pycharm")
-print("pycharm")
+# @app.on_event("shutdown")
+# async def on_shutdown():
+#     print("Connection close")
+#     conn.close()
+
+
+# def main():
+#     with conn.cursor() as cur:  # type: NamedTupleCursor
+#         cur.execute("select * from shops;")
+#         for shop in cur.fetchall():
+#             print(shop.id, shop.address)

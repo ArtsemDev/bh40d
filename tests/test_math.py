@@ -22,13 +22,16 @@ def set_up():
     return Math(a=4, b=2)
 
 
+m = pytest.fixture(lambda: Math(a=4, b=2))
+
+
 @pytest.mark.asyncio
 @pytest.mark.parametrize(
-    "a, b, c",
+    ("a", "b", "c"),
     (
             (4, 2, 8),
             (3, 3, 9)
     )
 )
-async def test_mul(a, b, c, set_up):
-    assert await set_up.mul(a=a, b=b) == c
+async def test_mul(a, b, c, m):
+    assert await m.mul(a=a, b=b) == c
