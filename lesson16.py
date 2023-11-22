@@ -155,7 +155,6 @@ def bar():
 
 class User:
     __slots__ = ("name", "email")
-    prefix: str = None
 
     def __init_subclass__(cls, **kwargs):
         if not kwargs.get("prefix"):
